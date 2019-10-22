@@ -1,0 +1,528 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway+Dots&display=swap");
+
+html,
+body {
+  height: 100vh;
+  font-size: 16px;
+}
+
+body,
+.navbar-header,
+.navbar,
+.navbar ul,
+.container,
+.signup-container,
+.signup,
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.darken {
+  -webkit-filter: brightness(10%);
+  filter: brightness(10%);
+}
+
+body {
+  margin: 0;
+  min-height: 500px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(220, 220, 220, 1)),
+    color-stop(60%, rgba(0, 0, 0, 1))
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(220, 220, 220, 1) 0%,
+    rgba(0, 0, 0, 1) 60%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(220, 220, 220, 1) 0%,
+    rgba(0, 0, 0, 1) 60%
+  );
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+/* -------NAV BAR-------- */
+.navbar-header {
+  -ms-flex-preferred-size: 80px;
+  flex-basis: 80px;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar ul {
+  width: 100%;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  list-style-type: none;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: rgba(203, 203, 203, 0.8);
+  -webkit-transition: color 200ms ease-in;
+  -o-transition: color 200ms ease-in;
+  transition: color 200ms ease-in;
+}
+
+.navbar a:hover {
+  color: rgb(155, 36, 23);
+}
+
+.navbar li {
+  margin-right: 1.5rem;
+}
+
+#brand {
+  display: none;
+  margin-right: auto;
+}
+
+nav .bars {
+  display: none;
+}
+
+/* -----ERROR HANDLING----- */
+.error {
+  padding: 0.25rem;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(249, 49, 49, 0.461);
+}
+
+.success {
+  padding: 0.25rem;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgba(49, 249, 236, 0.461);
+}
+/* ------------------------------- */
+
+.container {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: auto;
+  color: rgb(191, 191, 191);
+  font-size: 1.5rem;
+}
+
+.container p {
+  margin: 0;
+  text-align: center;
+}
+
+#logo a {
+  text-decoration: none;
+  color: rgba(203, 203, 203, 0.8);
+  font-size: 4rem;
+  font-family: "Raleway Dots", cursive;
+  cursor: pointer;
+}
+/* -------BACKGROUND VIDEO-------- */
+video {
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60vh;
+  opacity: 0.9;
+  z-index: -100;
+}
+/* -------RADIO PLAYER TO STREAM LIVE SHOWS-------- */
+#audio-player {
+  -webkit-transition: -webkit-filter 400ms ease;
+  transition: -webkit-filter 400ms ease;
+  -o-transition: filter 400ms ease;
+  transition: filter 400ms ease;
+  transition: filter 400ms ease, -webkit-filter 400ms ease;
+}
+
+#audio-player audio {
+  margin: 1rem;
+  outline: none;
+}
+
+#audio-player a {
+  text-decoration: none;
+  color: rgb(228, 208, 55);
+}
+/* -------MAILING LIST BUTTON TO BRING UP FORM-------- */
+#join-button {
+  position: relative;
+  bottom: 4rem;
+  width: 200px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 3rem;
+  margin-top: auto;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+#join-button p {
+  padding: 0.75rem;
+}
+
+#join-button:hover {
+  border: 2px solid rgb(4, 218, 214);
+  cursor: pointer;
+}
+/* -------MAILING LIST FORM-------- */
+.signup-container {
+  display: none;
+  position: absolute;
+  top: 180px;
+  margin: auto;
+  padding: 1rem;
+  width: 300px;
+  color: rgba(255, 255, 255, 0.8);
+  background: none;
+  border: solid 0.2rem rgb(113, 109, 101);
+  border-radius: 0.5rem;
+  z-index: 100;
+}
+
+.fa-times {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: rgb(226, 215, 215);
+  cursor: pointer;
+}
+
+.fa-times:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.signup {
+  padding: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  font-size: 1.5rem;
+}
+
+.signup input {
+  all: unset;
+}
+
+#field {
+  margin-bottom: 0.5rem;
+}
+
+#field input {
+  margin: 0.25rem;
+  width: 100%;
+  text-indent: 1rem;
+  border-radius: 2rem;
+  border: 0.125rem solid rgb(113, 109, 101);
+  -webkit-transition: border 200ms ease;
+  -o-transition: border 200ms ease;
+  transition: border 200ms ease;
+}
+
+#field input:focus,
+#field input:hover {
+  border: 0.125rem solid rgb(4, 218, 214);
+}
+
+#submit {
+  margin: 1rem auto;
+}
+
+#submit input {
+  padding: 0.25rem;
+  width: 150px;
+  border-radius: 2rem;
+  color: rgb(255, 255, 255);
+  background: rgb(4, 218, 214);
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+#submit input:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+/* -------FOOTER STYLES------- */
+footer {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-preferred-size: 80px;
+  flex-basis: 80px;
+}
+
+.icons {
+  margin-right: 1rem;
+}
+
+.contact {
+  margin-left: 1rem;
+}
+.contact a {
+  padding: 0 1rem 0.5rem 0;
+  text-decoration: none;
+  color: rgba(203, 203, 203, 0.8);
+  font-size: 1.5rem;
+}
+
+.icons a {
+  padding: 0 1rem 0.5rem 0;
+  text-decoration: none;
+  color: rgba(203, 203, 203, 0.8);
+  font-size: 2.25rem;
+}
+
+/* *****************************************
+  -----------MEDIA QUERIES-------------
+***************************************** */
+
+@media (max-width: 992px) {
+  .navbar ul {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    padding: unset;
+  }
+
+  .navbar li {
+    margin-right: unset;
+  }
+
+  #brand {
+    display: none;
+    margin-right: unset;
+  }
+
+  footer {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .icons {
+    margin-right: 0;
+  }
+
+  footer .icons a {
+    padding: 1rem;
+    text-decoration: none;
+    color: rgba(203, 203, 203, 0.8);
+    font-size: 2rem;
+  }
+
+  .fa-spotify {
+    color: #1db954;
+  }
+
+  .fa-mixcloud {
+    color: #52aad8;
+  }
+
+  .fa-vimeo {
+    color: #1ab7ea;
+  }
+}
+
+@media (max-width: 576px) {
+  body > * {
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .blur-background {
+    -webkit-filter: blur(3px) brightness(60%);
+    filter: blur(3px) brightness(60%);
+  }
+
+  .navbar-header {
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    margin: 0;
+    z-index: 1000;
+  }
+
+  .navbar ul {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: absolute;
+  }
+
+  .navbar ul li {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+
+  .navbar a {
+    margin-left: 0.5rem;
+    color: rgb(226, 215, 215);
+  }
+
+  #logo {
+    margin: 0.5rem;
+    padding: 0;
+  }
+
+  #brand,
+  #home {
+    display: none;
+  }
+
+  nav .bars {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: rgb(226, 215, 215);
+  }
+
+  .fa-bars {
+    vertical-align: top;
+    padding: 0;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  #audio-player {
+    -webkit-transition: -webkit-filter 400ms ease;
+    transition: -webkit-filter 400ms ease;
+    -o-transition: filter 400ms ease;
+    transition: filter 400ms ease;
+    transition: filter 400ms ease, -webkit-filter 400ms ease;
+  }
+
+  #audio-player audio {
+    margin: 0 auto;
+    width: 40vw;
+    height: 2rem;
+    outline: none;
+  }
+
+  #join-button {
+    position: relative;
+    bottom: 1rem;
+    width: 150px;
+    border: 2px solid rgb(4, 218, 214);
+    border-radius: 1rem;
+    margin-top: auto;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+
+  #join-button p {
+    padding: 0.25rem;
+  }
+
+  .signup-container {
+    position: absolute;
+    bottom: 0;
+    width: 70vw;
+    height: 60vh;
+    z-index: 100;
+  }
+
+  .signup input {
+    all: unset;
+    font-size: 1.25rem;
+  }
+
+  footer {
+    -ms-flex-preferred-size: 50px;
+    flex-basis: 50px;
+  }
+
+  .icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+    width: 60vw;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+
+  footer .icons a {
+    padding: 0;
+    margin: 0 0.75rem;
+    text-decoration: none;
+    color: rgba(203, 203, 203, 0.8);
+    font-size: 1.5rem;
+  }
+
+  .contact {
+    margin-left: 1rem;
+  }
+  .contact a {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+}

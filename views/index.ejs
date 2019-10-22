@@ -1,0 +1,43 @@
+<% include ./partials/header %>
+  <% if(error && error.length > 0) { %>
+    <div class='error'>
+      <%= error %>
+    </div>
+  <% } %>
+  <% if(success && success.length > 0) { %>
+    <div class='success'>
+      <%= success %>
+    </div>
+  <% } %>
+    <video playsinline autoplay muted loop poster="/media/images/still.png" id="bgvid">
+      <source src="/media/videos/backgrounds/strawberry.m4v#t=5" type="video/mp4">
+    </video>
+
+    <div class="container">
+      <h1 id="logo"><a href="/archives">SOFT RIDERS</a></h1>
+      <div class="signup-container">
+        <% include ./partials/signup %>
+        <i class="fas fa-times"></i>
+      </div>   
+    </div>
+
+    <div class="container">
+      <% if(radio) { %>
+        <% include ./partials/jolt_radio %>
+      <% } %>
+      
+      <div id="join-button">
+        <p>Join the Mailing List!</p>
+      </div>
+    </div>   
+
+    <% include ./partials/footer %>
+  <script type="text/javascript" src="scripts/script.js"></script>
+  <script type="text/javascript">
+    const title = 'Soft Riders'
+    const style = '<link rel="stylesheet" href="stylesheets/index.css" type="text/css" />'
+    $('head').append(style);
+    $('title').append(title);
+  </script>  
+</body>
+</html>

@@ -1,0 +1,101 @@
+@import "style.css";
+.container {
+  margin: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.about-container {
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-preferred-size: 60%;
+  flex-basis: 60%;
+  height: 60vh;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  background-color: rgb(182, 182, 176);
+  color: rgb(50, 50, 50);
+}
+
+.miki-img {
+  margin: 1rem;
+  -ms-flex-preferred-size: 30%;
+  flex-basis: 30%;
+}
+
+.miki-img img {
+  width: 100%;
+  border: solid 1px black;
+  border-radius: 0.5rem;
+}
+
+.text {
+  margin: 1rem;
+  -ms-flex-preferred-size: 60%;
+  flex-basis: 60%;
+  font-size: 1.5rem;
+}
+
+.text span {
+  color: rgb(155, 36, 23);
+}
+
+@media (max-width: 992px) {
+  .about-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    margin: 1rem;
+    height: unset;
+  }
+
+  .miki-img {
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 40%;
+  }
+
+  .text {
+    margin: 1rem 2rem;
+  }
+
+  .text p {
+    font-size: 1.25rem;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 576px) {
+  .miki-img {
+    width: 33%;
+  }
+  .about-container {
+    all: unset;
+    height: 100%;
+    margin: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .text {
+    margin: 0;
+  }
+
+  .text p {
+    margin: 0;
+    font-size: 1rem;
+  }
+}

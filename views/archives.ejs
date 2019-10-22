@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+  <div class="title"><h2>PAST SHOWS</h2></div>
+  <div class="container">
+   
+    <div class='mixcloud-grid'></div>
+    
+    <div class='mixcloud-content'>
+      <div>
+        <p>Select a show</p>
+      </div>
+    </div>
+  
+  </div>
+  <% include ./partials/footer %> 
+
+ <script type="text/javascript">
+  const title = 'Past Shows';
+  const style = '<link rel="stylesheet" href="stylesheets/style.css" type="text/css" />';
+  $('head').append(style);
+  $('title').append(title);
+  </script>
+  <script type="text/javascript" src="scripts/archives.js"></script>
+</body>
+</html>

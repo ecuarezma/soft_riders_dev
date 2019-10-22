@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+  <div class="title">
+    <h2>Promos</h2>
+  </div>
+  <div class="promos-player">
+    <p>Select a promo video from below</p>
+  </div>
+  <div class="promos-container"></div>
+ 
+    
+  <% include ./partials/footer %> 
+  <script type="text/javascript">
+    let x = '<%= token %>';
+    const title = 'Promos'
+    const style = '<link rel="stylesheet" href="stylesheets/promos.css" type="text/css" />';
+    $('head').append(style);
+    $('title').append(title);
+  </script>  
+  <script type="text/javascript" src="scripts/promos.js"></script>
+</body>
+</html>
