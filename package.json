@@ -27,7 +27,7 @@
     "mailgun-js": "^0.22.0",
     "moment": "^2.24.0",
     "moment-recur": "^1.0.7",
-    "mongoose": ">=5.7.5",
+    "mongoose": "^5.7.6",
     "mongoose-unique-validator": "^2.0.3",
     "newrelic": "^5.13.0",
     "querystring": "^0.2.0",
