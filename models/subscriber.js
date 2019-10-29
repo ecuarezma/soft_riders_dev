@@ -36,15 +36,4 @@ subscriberSchema.plugin(uniqueValidator, {
 
 var Subscriber = mongoose.model("Subscriber", subscriberSchema);
 
-// Subscriber.create({
-//     firstName: "Edgar",
-//     lastName: "Cuarezma",
-//     email: "eCuAreZmA@gmail.com",
-//     location: "St Francis, WI"
-// }).then(newData => {
-//     console.log(newData)
-// }).catch(err => {
-//     console.log(err)
-// })
-
 module.exports = Subscriber;
