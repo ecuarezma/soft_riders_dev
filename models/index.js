@@ -1,16 +1,16 @@
 var mongoose = require("mongoose");
 mongoose.set("debug", true);
 
-const password = process.env.DB_DEV_PWD;
-const admin = process.env.ADMIN;
+const uri = `mongodb+srv://ecuarezma:${process.env.DB_PWD}@jovial-cluster-bd0wc.mongodb.net/Soft_Riders?retryWrites=true&w=majority`;
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  dbName: "Soft_Riders"
+};
 
 mongoose
-  .connect(
-    `mongodb+srv://ecuarezma:${process.env.DB_PWD}@jovial-cluster-bd0wc.mongodb.net/Soft_Riders?retryWrites=true&w=majority`,
-    { useNewUrlParser: true, useCreateIndex: true } // developer database
-    // `mongodb+srv://${admin}:${password}@cluster0-0wjpt.mongodb.net/Soft_Riders?retryWrites=true&w=majority`,
-    // { useNewUrlParser: true, useCreateIndex: true } // production database
-  )
+  .connect(uri, options)
   .then(() => {
     console.log("connected to db!");
   })
